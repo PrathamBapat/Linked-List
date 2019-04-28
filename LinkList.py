@@ -1,3 +1,4 @@
+# Defining class inbuilt listnode
 class ListNode:
    def __init__(self, data, next=None):
 		self.data = data
@@ -5,7 +6,7 @@ class ListNode:
 
 class LinkedList:
 
-   def __init__(self):
+   def __init__(self):# Constructor
        self.head = None
 
    def getSize(self):
@@ -16,7 +17,7 @@ class LinkedList:
           s = s + 1
         print(str(s))
         
-
+# If head is not null we are parsing till end and then adding the new node.
    def addNode(self,data):
         newNode = ListNode(data)
         if self.head is None:
@@ -26,7 +27,9 @@ class LinkedList:
            while curr.next is not None:
              curr = curr.next
            curr.next = newNode
-      
+# Assume three nodes a, b, c. 
+# Then if we want to delete we putting prev to a, curr to b.
+# Now,  we give b.next as null and putting curr to b and prev.next to c.    
    def delete(self,value):
       curr = self.head
       prev = self.head
@@ -49,13 +52,15 @@ class LinkedList:
        while curr is not None:
            print(str(curr.data))
            curr = curr.next
-
+# Main function starts here.
 myList = LinkedList()
 value = 1
 value_2 = 1;
 while value>0:
  print("Press the number regarding what you want to do!\n 1 for adding the element\n 2 for printing the list\n 3 for getting the link size \n 4 for deleting the following node")
  value_1 = input()
+	
+# Switch case in python.	
  def switch(arg) :
   switcher = {
     1 : 1,
